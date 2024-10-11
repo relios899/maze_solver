@@ -1,5 +1,6 @@
 from graphics import *
 from window import *
+from cell import *
 from time import sleep
 
 class Maze():
