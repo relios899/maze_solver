@@ -20,20 +20,26 @@ class Line():
 
 
 class Cell():
-    def __init__(self, top_left=Point(0,0), bottom_right=Point(1,1), window=None, lw=True,
-                 rw=True, tw=True, bw=True):
+    def __init__(self, window=None):
         self._win = window
-        self._x1 = top_left.x
-        self._x2 = bottom_right.x
-        self._y1 = top_left.y
-        self._y2 = bottom_right.y
-        self.has_left_wall = lw 
-        self.has_right_wall = rw 
-        self.has_top_wall = tw
-        self.has_bottom_wall = bw
+        self._x1 = None
+        self._x2 = None
+        self._y1 = None
+        self._y2 = None
+        self.has_left_wall = True 
+        self.has_right_wall =  True
+        self.has_top_wall = True 
+        self.has_bottom_wall = True
 
-    def draw(self):
+    def draw(self, top_left, bottom_right):
+        if not self._win:
+            return
+
         default_color = "black"
+        self._x1 = top_left.x
+        self._y1 = top_left.y
+        self._x2 = bottom_right.x
+        self._y2 = bottom_right.y
         # left wall is x1 and y1 -> y2
         if self.has_left_wall:
             lw_p1 = Point(self._x1, self._y1)
