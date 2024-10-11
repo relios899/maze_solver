@@ -16,7 +16,8 @@ def main():
     # cell2 = Cell(win, start, end, tw=False, bw=False)
     # cell2.draw()
 
-    maze = Maze(20,20,3,5,100,100,win)
+    maze = Maze(20,20,5,5,100,100,win)
+    maze.solve()
 
 
     # cell.draw_move(cell2, undo=True)
